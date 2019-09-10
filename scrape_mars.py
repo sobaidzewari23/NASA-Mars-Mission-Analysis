@@ -15,7 +15,7 @@ def init_browser():
     #Windows Users
     # executable_path = {'executable_path': '/Users/cantu/Desktop/Mission-to-Mars'}
     # return Browser('chrome', **executable_path, headless=False)
-    exec_path = {'executable_path': '/app/.chromedriver/bin/chromedriver'}
+    exec_path = {'executable_path': 'chromedriver.exe'}
     return Browser('chrome', headless=True, **exec_path)
 
 # Create Mission to Mars global dictionary that can be imported into Mongo
@@ -152,10 +152,10 @@ def scrape_mars_facts():
     mars_df = mars_facts[0]
 
     # Assign the columns `['Description', 'Value']`
-    mars_df.columns = ['Description','Value']
+    # mars_df.columns = ['Description','Value']
 
     # Set the index to the `Description` column without row indexing
-    mars_df.set_index('Description', inplace=True)
+    # mars_df.set_index('Description', inplace=True)
 
     # Save html code to folder Assets
     data = mars_df.to_html()
